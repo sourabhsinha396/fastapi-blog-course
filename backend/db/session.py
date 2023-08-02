@@ -16,7 +16,6 @@ engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SESSIONLOCAL = sessionmaker(autoflush=False, autocommit=False, bind=engine)
 
 
-
 def get_db() -> Generator:
     try:
         db = SESSIONLOCAL()
