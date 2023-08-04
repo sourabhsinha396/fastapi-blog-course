@@ -11,3 +11,6 @@ alembic==1.11.1
 pydantic[email]
 
 passlib[bcrypt]
+
+pytest==7.4.0
+httpx==0.24.1
