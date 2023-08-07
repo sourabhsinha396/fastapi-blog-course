@@ -14,3 +14,5 @@ passlib[bcrypt]
 
 pytest==7.4.0
 httpx==0.24.1
+
+python-jose==3.3.0
