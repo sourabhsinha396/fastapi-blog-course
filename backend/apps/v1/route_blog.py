@@ -9,5 +9,4 @@ router = APIRouter()
 
 @router.get("/")
 def home(request: Request):
-    print(dir(request))
     return templates.TemplateResponse("blogs/home.html", {"request": request})
