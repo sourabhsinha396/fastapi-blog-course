@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import APIRouter
 from fastapi import Request, Depends
 from fastapi.templating import Jinja2Templates
@@ -11,9 +12,9 @@ router = APIRouter()
 
 
 @router.get("/")
-def home(request: Request, db: Session = Depends(get_db)):
+def home(request: Request, alert: Optional[str] = None, db: Session = Depends(get_db)):
     blogs = list_blogs(db=db)
-    context = {"request": request,"blogs":blogs}
+    context = {"request": request,"blogs":blogs,"alert":alert}
     return templates.TemplateResponse("blogs/home.html", context=context)
 
 
